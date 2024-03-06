@@ -17,12 +17,12 @@ resize_img = cv.resize(img, (1020,720), interpolation=cv.INTER_AREA)
 cv.imwrite("Images/test1.jpg", resize_img)
 
 #Image Analysis
-yolo = "python3 /home/sgme/yolov5/detect.py > /home/sgme/yolov5/output.txt --weights /home/sgme/yolov5/best.pt --img 640 --conf 0.4 --source /home/sgme/Images/test1.jpg"
+yolo = "python3 ~/workspace/2D_Waste_Sorting_Solution/detect.py > ~/workspace/2D_Waste_Sorting_Solution/output.txt --weights ~/workspace/2D_Waste_Sorting_Solution/best.pt --img 640 --conf 0.4 --source ~/workspace/2D_Waste_Sorting_Solution/Images/test1.jpg"
 os.system(yolo)
 time.sleep(1)
 
 #object list
-lines = open('/home/sgme/yolov5/output.txt').readlines()
+lines = open('~/workspace/2D_Waste_Sorting_Solution/output.txt').readlines()
 given_map=file_read.map()
 start_row = 0
 start_col = 0
