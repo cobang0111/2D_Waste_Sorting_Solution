@@ -56,9 +56,19 @@ Raspberry Pi4에서 WebCam 으로 분류 Desk를 촬영합니다.
 
 ```bash
 
-cd ~/workspace
+cd
+
+mkdir workspace
+
+cd workspace
 
 git clone https://github.com/cobang0111/2D_Waste_Sorting_Solution.git
+
+cd 2D_Waste_Sorting_Solution
+
+pip install -r requirements.txt
+
+cd ..
 
 ```
 
@@ -69,7 +79,7 @@ git clone https://github.com/cobang0111/2D_Waste_Sorting_Solution.git
 
 Integration Code 인 recycle.py를 작동시키면, 촬영부터, 분석 및 실행까지 한 번에 작업이 통합되어 수행됩니다.
 
-integration code에서 baudrate와 output.txt 파일의 경로를 적절히 수정해야 합니다.
+integration code에서 Port와 baudrate, output.txt 파일의 경로를 적절히 수정해야 합니다.
 
 	
 🚀 Integration Code - Python3 Code (recycle.py)
@@ -133,7 +143,6 @@ python3 recycle.py
 ```
 
 <br>
-
 
 			  
 ## <div align="center">Reference - yolov5</div>
