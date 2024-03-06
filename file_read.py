@@ -2,7 +2,7 @@
 #read data from file
 #Make 2D Array using output.txt (object location data)
 def map():
-        f = open("/home/sgme/yolov5/output.txt", 'r')
+        f = open("~/workspace/2D_Waste_Sorting_Solution/output.txt", 'r')
         f.readline()
         object_list = []
         lines = f.read().splitlines()
