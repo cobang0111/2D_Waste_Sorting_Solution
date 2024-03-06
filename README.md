@@ -16,29 +16,29 @@
 
 [Youtube_link](https://www.youtube.com/watch?v=P4Z1LM5an2k)
 
+![image](https://github.com/cobang0111/2D_Waste_Sorting_Solution/assets/97373900/ff19f49e-b665-49a0-aad7-9d098a361ac1)
+
 
 ## <div align="center">Summary</div>
 
-RaspberryPi에서 WebCam 으로 분류 Desk를 촬영합니다.
+Raspberry Pi4에서 WebCam 으로 분류 Desk를 촬영합니다.
 
-- First Image
+![image](https://github.com/cobang0111/2D_Waste_Sorting_Solution/assets/97373900/780a27f5-6a42-4bd6-93d0-95aec734a358)
+
+<br>
 
 이를 customized YOLO 로 분석하고, 분석된 이미지를 Matrix 에 Mapping 합니다.
 
-- Final Image
+![image](https://github.com/cobang0111/2D_Waste_Sorting_Solution/assets/97373900/67a236b9-3df1-4eb4-bbfe-f0d4f39e5ef7)
+
 
 <br>
 
 이를 Dijkstra Algorithm을 이용하여 최적 경로를 계산하고 2D 플로터를 사용하여 분류합니다.
-
 <br>
-
 이 Repository 는 모형 캔과 모형 페트에 대해 YOLO를 customizing 시켰고,
-
 <br>
-
 페트 모형을 위쪽으로, 캔 모형을 아래로 분류합니다. 
-
 <br>
 
 ## <div align="center">Pre-requisite</div>
@@ -48,15 +48,17 @@ RaspberryPi에서 WebCam 으로 분류 Desk를 촬영합니다.
 
 - [Our Roboflow Data Set](https://app.roboflow.com/sgme/classify-pet-and-can/4)
 
+- Dataset 을 사용하여 Google Colab 에서 custom 분석 모델을 학습시킵니다. 
+
 - 높은 정확도와 빠른 분석을 위하여 yolov5m 모델을 이용하여 [best.pt](https://drive.google.com/file/d/1xFNFxLWNwAg3CrGFe8cWR2mcu1oUs7Ly/view?usp=sharing)를 제작
 
-- 본인의 workspace 디렉토리를 만들고 해당 디렉토리에서 git clonning
+- 본인의 workspace 디렉토리를 만들고 해당 디렉토리에서 이 repository를 git clonning 합니다.
 
 ```bash
 
 cd ~/workspace
 
-git clone https://github.com/cobang0111/.git
+git clone https://github.com/cobang0111/2D_Waste_Sorting_Solution.git
 
 ```
 
@@ -93,13 +95,13 @@ resize_img = cv.resize(img, (1020,720), interpolation=cv.INTER_AREA)
 cv.imwrite("Images/test1.jpg", resize_img)
 
 #Image Analysis
-yolo = "python3 yolov5/detect.py > yolov5/output.txt --weights yolov5/best.pt --img 640 --conf 0.4 --source Images/test1.jpg"
+yolo = "python3 2D_Waste_Sorting_Solution/detect.py > 2D_Waste_Sorting_Solution/output.txt --weights 2D_Waste_Sorting_Solution/best.pt --img 640 --conf 0.4 --source Images/test1.jpg"
 os.system(yolo)
 time.sleep(1)
 
 # object list
 # You need to modify here
-lines = open('/home/sgme/yolov5/output.txt').readlines()
+lines = open('~/workspace/2D_Waste_Sorting_Solution/output.txt').readlines()
 given_map=file_read.map()
 start_row = 0
 start_col = 0
@@ -124,11 +126,15 @@ while True :
 
 ```bash
 
-cd 
+cd ~/workspace
 
 python3 recycle.py
 
 ```
+
+<br>
+<br>
+<br>
 
 			  
 ## <div align="center">Reference - yolov5</div>
