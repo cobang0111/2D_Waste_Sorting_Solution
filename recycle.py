@@ -7,7 +7,7 @@ import dijkstra
 import dijkstra_head
 
 #Serial Setup
-py_serial = serial.Serial(port = '/dev/ttyUSB6', baudrate = 9600)
+py_serial = serial.Serial(port = '/dev/ttyUSB0', baudrate = 9600)
 
 #Camera Setup
 picture = "fswebcam --no-banner --set brightness=10% Images/test1.jpg"
