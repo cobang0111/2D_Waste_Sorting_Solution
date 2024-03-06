@@ -133,11 +133,13 @@ python3 recycle.py
 ```
 
 <br>
-<br>
-<br>
+
 
 			  
 ## <div align="center">Reference - yolov5</div>
 
 See the [YOLOv5 Docs](https://docs.ultralytics.com/yolov5) for full documentation on training, testing and deployment. 
+
+<br>
+<br>
 
